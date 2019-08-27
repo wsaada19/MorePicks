@@ -1,0 +1,53 @@
+tools:
+  laserPickaxe:
+    name: Laser Pickaxe
+    itemLore: Mine from miles away!
+    unbreakable: true
+    enabled: true
+  expPickaxe:
+    name: Experience Pickaxe
+    itemLore: Get that exp!!
+    unbreakable: true
+    enabled: true
+  smeltingPickaxe:
+    name: Smelting Pickaxe
+    itemLore: Who needs a furnace?
+    unbreakable: true
+    enabled: true
+  magneticPickaxe:
+    name: Magnetic Pickaxe
+    itemLore: Don't bother picking anything up!
+    unbreakable: true
+    enabled: true
+  bountifulPickaxe:
+    name: Bountiful Pickaxe
+    itemLore: Free Stuff!
+    unbreakable: true
+    enabled: true
+  explosivePickaxe:
+    name: Explosive Pickaxe
+    itemLore: BOOM!
+    unbreakable: true
+    enabled: true
+  megaAxe:
+    name: Mega Axe
+    itemLore: Only takes one wack!
+    unbreakable: true
+    enabled: true
+  piercingPickaxe:
+    name: Piercing Pickaxe
+    itemLore: Possibility to destroy extra blocks!
+    unbreakable: true
+    enabled: true
+  treasurePickaxe:
+    name: Treasure Pickaxe
+    itemLore: Find treasure!
+    unbreakable: true
+    enabled: true
+  treasureAxe:
+    name: Treasure Axe
+    itemLore: Find Treasure
+    unbreakable: true
+    enabled: true
+
+

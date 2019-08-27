@@ -1,0 +1,19 @@
+name: MorePicks
+version: 1.0
+author: Will
+main: me.williamsaada.MorePicks.MorePicks
+api-version: 1.13
+
+commands:
+  mp:
+    usage: / <command> [give, reload]
+    description: Commands for MorePicks plugin
+
+permissions:
+  morepicks.give:
+    description: The ability to give any player a custom MorePicks tool.
+    default: op
+    children:
+      morepicks.use:
+        description: The ability to use a custom MorePicks tool.
+        default: true

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MaginArena">
+    <output-path>$USER_HOME$/OneDrive/Desktop/MinecraftServerStuff/plugins</output-path>
+    <root id="archive" name="MaginArena.jar">
+      <element id="module-output" name="MagicArena" />
+    </root>
+  </artifact>
+</component>
