@@ -20,6 +20,7 @@ public class PickAxeInformation {
     public PickAxeInformation(String name, ArrayList<String> itemLore, boolean ub, boolean eb, Material mat){
         this.name = name;
         this.itemLore = itemLore;
+        itemLore.add("");
         unbreakable = ub;
         enabled = eb;
         material = mat;
@@ -43,10 +44,6 @@ public class PickAxeInformation {
 
     public boolean getEnabled(){
         return enabled;
-    }
-
-    public boolean getUnbreakable(){
-        return unbreakable;
     }
 
     public ItemStack getPick(){

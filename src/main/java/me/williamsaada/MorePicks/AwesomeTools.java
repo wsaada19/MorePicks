@@ -3,16 +3,20 @@ package me.williamsaada.MorePicks;
 import me.williamsaada.MorePicks.commands.PickCommands;
 import me.williamsaada.MorePicks.events.LaserEvent;
 import me.williamsaada.MorePicks.events.MiningEvent;
+import me.williamsaada.MorePicks.events.TreasureFindEvent;
 import me.williamsaada.MorePicks.events.WoodEvent;
+import me.williamsaada.MorePicks.treasurefind.LootItem;
+import me.williamsaada.MorePicks.treasurefind.LootTable;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
-public class MorePicks extends JavaPlugin {
+public class AwesomeTools extends JavaPlugin {
 
-    public static MorePicks morePicks;
+    public static AwesomeTools awesomeTools;
     private PickCommands commands;
 
     @Override
@@ -26,7 +30,9 @@ public class MorePicks extends JavaPlugin {
         loadConfig();
         loadPicks();
         MorePicksUtility.initialize();
-        morePicks = this;
+        awesomeTools = this;
+
+        loadLootTable();
 
     }
     @Override
@@ -34,8 +40,8 @@ public class MorePicks extends JavaPlugin {
         getLogger().info("onDisable is called!");
     }
 
-    public static MorePicks getInstance(){
-        return morePicks;
+    public static AwesomeTools getInstance(){
+        return awesomeTools;
     }
 
     public void loadConfig() {
@@ -52,6 +58,8 @@ public class MorePicks extends JavaPlugin {
             ConfigurationSection sel = tools.getConfigurationSection(itemKeys[i]);
             if(itemKeys[i].contains("Pickaxe")){
                 material = Material.DIAMOND_PICKAXE;
+            } else if(itemKeys[i].contains("dirt")) {
+                material = Material.DIAMOND_SHOVEL;
             } else {
                 material = Material.DIAMOND_AXE;
             }
@@ -74,10 +82,16 @@ public class MorePicks extends JavaPlugin {
     }
 
     private void loadLootTable(){
-        List<?> lootTable = getConfig().getList("lootTable");
+        List<?> lootTable = getConfig().getList("drops");
+        LootTable table = new LootTable(getConfig().getDouble("dropChance"));
         for(Object item : lootTable){
-
+            LinkedHashMap<?, ?> map = (LinkedHashMap)item;
+            LootItem lootItem = new LootItem((String)map.get("material"),
+                    (Integer) map.get("min"), (Integer) map.get("max"), (Integer) map.get("weight"));
+            table.addItem(lootItem);
         }
+
+        getServer().getPluginManager().registerEvents(new TreasureFindEvent(table), this);
     }
 
 }

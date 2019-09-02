@@ -8,9 +8,9 @@ public class HelpCommand extends SubCommand {
     public void onCommand(Player player, String[] args){
 
         player.sendMessage(ChatColor.BLUE + "More Picks Commands \n" +
-                            ChatColor.YELLOW + "/mp give <player name> <tool name>: " + ChatColor.WHITE + "Gives the named player the named tool \n" +
-                            ChatColor.YELLOW + "/mp reload: " + ChatColor.WHITE + "Reloads the plugin configuration file \n" +
-                            ChatColor.YELLOW + "/mp help: " + ChatColor.WHITE + "Shows a list of all commands");
+                            ChatColor.YELLOW + "/at give <player name> <tool name>: " + ChatColor.WHITE + "Gives the named player the named tool \n" +
+                            ChatColor.YELLOW + "/at reload: " + ChatColor.WHITE + "Reloads the plugin configuration file \n" +
+                            ChatColor.YELLOW + "/at help: " + ChatColor.WHITE + "Shows a list of all commands");
     }
 
     public String name() {
@@ -18,7 +18,7 @@ public class HelpCommand extends SubCommand {
     }
 
     public String info() {
-        return "The command" + ChatColor.YELLOW + " /mp [help} will give information on the More Picks plugin";
+        return "The command" + ChatColor.YELLOW + " /at [help} will give information on the More Picks plugin";
     }
 
     public String[] aliases() {

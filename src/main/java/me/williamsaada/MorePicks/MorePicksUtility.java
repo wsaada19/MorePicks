@@ -11,7 +11,8 @@ public class MorePicksUtility {
 
     private static HashMap<String, String> smeltingMap = new HashMap<String, String>();
     private static String[] itemCodes = {"laserPickaxe", "expPickaxe", "smeltingPickaxe", "magneticPickaxe",
-            "bountifulPickaxe", "explosivePickaxe", "megaAxe", "piercingPickaxe"};
+            "bountifulPickaxe", "explosivePickaxe", "megaAxe", "piercingPickaxe", "dirtDestroyer", "treasurePickaxe",
+            "treasureAxe", "treasureFishingRod"};
     private static Material[] oreRank = {Material.DIAMOND_ORE, Material.GOLD_ORE, Material.EMERALD, Material.IRON_ORE,
                                 Material.REDSTONE_ORE, Material.NETHER_QUARTZ_ORE, Material.COAL, Material.LAPIS_ORE};
 

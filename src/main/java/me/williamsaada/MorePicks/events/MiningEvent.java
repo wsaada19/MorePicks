@@ -2,6 +2,7 @@ package me.williamsaada.MorePicks.events;
 
 import me.williamsaada.MorePicks.MorePicksUtility;
 import me.williamsaada.MorePicks.PickAxeInformation;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -24,6 +25,7 @@ public class MiningEvent implements Listener {
     private static final int BOUNTIFUL_PICKAXE = 4;
     private static final int EXPLOSIVE_PICKAXE = 5;
     private static final int PIERCING_PICKAXE = 7;
+    private static final int DIRT_DESTROYER = 8;
 
     private ArrayList<PickAxeInformation> allTools = PickAxeInformation.getListOfPicks();
 
@@ -39,18 +41,27 @@ public class MiningEvent implements Listener {
         String itemName = item.getItemMeta().getDisplayName();
 
         // Runs when player uses a smelting pickaxe
-        if(itemName.equals(allTools.get(SMELTING_PICKAXE).getName())){
+        if(itemName.equals(allTools.get(SMELTING_PICKAXE).getName()) &&
+                allTools.get(SMELTING_PICKAXE).getEnabled()){
             handleSmeltingPick(e);
             return;
         }
         // Experience pickaxe
-        if(itemName.equals(allTools.get(EXP_PICKAXE).getName())){
+        if(itemName.equals(allTools.get(EXP_PICKAXE).getName()) &&
+                allTools.get(EXP_PICKAXE).getEnabled()){
             handleExperiencePick(e);
             return;
         }
         //Magnetic Pickaxe
-        if(itemName.equals(allTools.get(MAGNETIC_PICKAXE).getName())){
+        if(itemName.equals(allTools.get(MAGNETIC_PICKAXE).getName()) &&
+                allTools.get(MAGNETIC_PICKAXE).getEnabled()){
             handleMagneticPick(e);
+            return;
+        }
+
+        if(itemName.equals(allTools.get(DIRT_DESTROYER).getName()) &&
+                allTools.get(DIRT_DESTROYER).getEnabled()){
+            handleDirtDestroyer(e);
             return;
         }
         Block b = e.getBlock();
@@ -58,7 +69,8 @@ public class MiningEvent implements Listener {
         /*
             Bountiful Pickaxe
          */
-        if(itemName.equals(allTools.get(BOUNTIFUL_PICKAXE).getName())){
+        if(itemName.equals(allTools.get(BOUNTIFUL_PICKAXE).getName()) &&
+                allTools.get(BOUNTIFUL_PICKAXE).getEnabled()){
 
             if(b.getType().toString().contains("ORE")){return;}
             Material highestRank = null;
@@ -92,7 +104,8 @@ public class MiningEvent implements Listener {
         /*
             Explosive Pickaxe
          */
-        if(itemName.equals(allTools.get(EXPLOSIVE_PICKAXE).getName())){
+        if(itemName.equals(allTools.get(EXPLOSIVE_PICKAXE).getName()) &&
+                allTools.get(EXPLOSIVE_PICKAXE).getEnabled()){
             for(int i = 0; i < 3; i++){
                 for(int j = 0; j < 3; j++){
                     for(int k = 0; k < 3; k++){
@@ -141,17 +154,41 @@ public class MiningEvent implements Listener {
         String dir = MorePicksUtility.getCardinalDirection(e.getPlayer());
 
         while(num < .5){
-            if(dir.equals("North")){
-                currentBlock = currentBlock.getRelative(-1, 0, 0);
-            } else if(dir.equals("South")){
-                currentBlock = currentBlock.getRelative(1, 0, 0);
-            } else if(dir.equals("East")){
-                currentBlock = currentBlock.getRelative(0, 0, -1);
-            } else {
-                currentBlock = currentBlock.getRelative(0, 0, 1);
-            }
+           currentBlock = getRelativeBlock(dir, currentBlock);
             currentBlock.breakNaturally();
             num = random.nextDouble();
+        }
+    }
+
+    private void handleDirtDestroyer(BlockBreakEvent e){
+        int maxDistance = 10;
+
+        if(e.getBlock().getType() != Material.DIRT && e.getBlock().getType() != Material.GRASS_BLOCK){
+            return;
+        }
+
+        String direction = MorePicksUtility.getCardinalDirection(e.getPlayer());
+        Block currentBlock = getRelativeBlock(direction, e.getBlock());
+        for(int i = 0; i < maxDistance; i++){
+            if(currentBlock.getType() != Material.DIRT && e.getBlock().getType() != Material.GRASS_BLOCK){
+                continue;
+            }
+            currentBlock.breakNaturally();
+
+            currentBlock = getRelativeBlock(direction, currentBlock);
+
+        }
+    }
+
+    private static Block getRelativeBlock(String direction, Block block){
+        if(direction.equals("North")){
+            return block.getRelative(-1, 0, 0);
+        } else if(direction.equals("South")){
+            return block.getRelative(1, 0, 0);
+        } else if(direction.equals("East")){
+            return block.getRelative(0, 0, -1);
+        } else {
+            return block.getRelative(0, 0, 1);
         }
     }
 }

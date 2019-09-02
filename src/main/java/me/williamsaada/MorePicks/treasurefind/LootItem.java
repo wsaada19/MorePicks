@@ -10,12 +10,12 @@ import java.util.Random;
 
 public class LootItem implements ConfigurationSerializable {
 
-    private Material material;
+    private String material;
     private int min;
     private int max;
     private int weight;
 
-    public LootItem(Material mat, int min, int max, int weight ){
+    public LootItem(String mat, int min, int max, int weight ){
 
         material = mat;
         this.min = min;
@@ -24,7 +24,7 @@ public class LootItem implements ConfigurationSerializable {
     }
 
     public LootItem(Map<String, Object> map){
-        material = (Material)map.get("material");
+        material = (String)map.get("material");
         min = (Integer)map.get("min");
         max = (Integer)map.get("max");
         weight = (Integer)map.get("weight");
@@ -39,7 +39,7 @@ public class LootItem implements ConfigurationSerializable {
         } else {
             count = random.nextInt(max - min) + min;
         }
-        return new ItemStack(material, count);
+        return new ItemStack(Material.getMaterial(material), count);
 
     }
 
@@ -54,7 +54,6 @@ public class LootItem implements ConfigurationSerializable {
         map.put("max", max);
         map.put("weight", weight);
         return map;
-
 
     }
 }

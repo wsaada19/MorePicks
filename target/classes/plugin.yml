@@ -1,19 +1,19 @@
-name: MorePicks
+name: AwesomeTools
 version: 1.0
 author: Will
-main: me.williamsaada.MorePicks.MorePicks
+main: me.williamsaada.MorePicks.AwesomeTools
 api-version: 1.13
 
 commands:
-  mp:
+  at:
     usage: / <command> [give, reload]
     description: Commands for MorePicks plugin
 
 permissions:
-  morepicks.give:
+  awesometools.give:
     description: The ability to give any player a custom MorePicks tool.
     default: op
     children:
-      morepicks.use:
+      awesometools.use:
         description: The ability to use a custom MorePicks tool.
         default: true

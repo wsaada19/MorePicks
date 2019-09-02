@@ -15,7 +15,7 @@ public class GiveCommand extends SubCommand {
 
         if(args.length < 3){return;}
 
-        if(!player.hasPermission("morepicks.give")){
+        if(!player.hasPermission("awesometools.give")){
             player.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
             return;
         }
@@ -29,6 +29,18 @@ public class GiveCommand extends SubCommand {
         String itemName = args[2];
         ItemStack item = null;
         String displayName = "";
+
+        if(itemName.equals("all"))
+        {
+            for(int i = 0; i < itemCodes.length; i++){
+                if(!PickAxeInformation.getPick(i).getEnabled()){break;}
+
+                playerToSend.getInventory().addItem(PickAxeInformation.getPick(i).getPick());
+            }
+            playerToSend.sendMessage(ChatColor.GREEN + "You have been awarded with a " +
+                    displayName + " all of our awesome tools!");
+            return;
+        }
 
         for(int i = 0; i < itemCodes.length; i++){
             if(itemName.equalsIgnoreCase(itemCodes[i])){

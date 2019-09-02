@@ -1,6 +1,6 @@
 package me.williamsaada.MorePicks.commands;
 
-import me.williamsaada.MorePicks.MorePicks;
+import me.williamsaada.MorePicks.AwesomeTools;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,9 +13,9 @@ import java.util.HashMap;
 
 public class PickCommands implements CommandExecutor {
 
-    private MorePicks plugin = JavaPlugin.getPlugin(MorePicks.class);
+    private AwesomeTools plugin = JavaPlugin.getPlugin(AwesomeTools.class);
     private HashMap<String, SubCommand> subCommands;
-    private final String main = "mp";
+    private final String main = "at";
 
     public void setup(){
 
@@ -41,10 +41,10 @@ public class PickCommands implements CommandExecutor {
             arrayList.addAll(Arrays.asList(args));
             arrayList.remove(0);
             subCommands.get(sub).onCommand(player, args);
+            return true;
         } else {
             player.sendMessage("The subcommand " + sub + " does not exist!");
+            return false;
         }
-
-        return false;
     }
 }

@@ -24,10 +24,10 @@ public class LaserEvent implements Listener {
     public void onClickEvent(PlayerInteractEvent e){
         Player player = e.getPlayer();
         if( e.getAction().equals(Action.LEFT_CLICK_AIR) &&
-                        player.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(LASER_PICKAXE).getName())){
+                        player.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(LASER_PICKAXE).getName()) &&
+                PickAxeInformation.getPick(LASER_PICKAXE).getEnabled()){
             Snowball snowball = player.launchProjectile(Snowball.class);
             snowball.setCustomName(player.getName());
-            Bukkit.getServer().broadcastMessage(player.getName());
         }
     }
 
@@ -36,7 +36,7 @@ public class LaserEvent implements Listener {
         Entity entity = e.getEntity();
         if (!(entity instanceof Snowball)) { return; }
         Player p = Bukkit.getPlayer(entity.getCustomName());
-        Bukkit.getServer().broadcastMessage(entity.getCustomName());
+
         if(p == null){return;}
             Location loc = entity.getLocation();
             Vector vec = entity.getVelocity();

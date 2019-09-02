@@ -1,3 +1,5 @@
+# Name, itemLore (description), unbreakable field all can be configured
+# Set enabled to false if you would like to disable a tool in your server
 tools:
   laserPickaxe:
     name: Laser Pickaxe
@@ -39,6 +41,11 @@ tools:
     itemLore: Possibility to destroy extra blocks!
     unbreakable: true
     enabled: true
+  dirtDestroyer:
+    name: Dirt Destroyer
+    itemLore: Breaks a lot of dirt!
+    unbreakable: true
+    enabled: true
   treasurePickaxe:
     name: Treasure Pickaxe
     itemLore: Find treasure!
@@ -49,5 +56,26 @@ tools:
     itemLore: Find Treasure
     unbreakable: true
     enabled: true
+  treasureFishingRod:
+    name: Treasure Fishing Rod
+    itemLore: Catch a fish and you might get some tresure!
+    unbreakable: true
+    enabled: true
 
+# Drop chance refers to the chance of drop occurring from a loot tool
+# Example: .05 means each time you use your Looting Pick, there is a 5% of getting a drop from the table
+dropChance: .50
+
+# Drops occur based on the above chance. To add items use the format below, make sure to add items from
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html for this to work
+# The higher the weight is the more likely an item is to drop
+drops:
+  - material: DIAMOND
+    weight: 10
+    min: 1
+    max: 3
+  - material: LEATHER
+    weight: 90
+    min: 1
+    max: 10
 

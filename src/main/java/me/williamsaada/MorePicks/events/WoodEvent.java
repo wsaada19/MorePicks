@@ -17,7 +17,8 @@ public class WoodEvent implements Listener {
         Block b = e.getBlock();
         ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
         if(b.getType().toString().contains("LOG") &&
-                item.getItemMeta().getDisplayName().equalsIgnoreCase(PickAxeInformation.getPick(MEGA_AXE).getName())){
+                item.getItemMeta().getDisplayName().equalsIgnoreCase(PickAxeInformation.getPick(MEGA_AXE).getName()) &&
+                PickAxeInformation.getPick(MEGA_AXE).getEnabled()){
 
             Block block = b.getRelative(0, 1, 0);
 
@@ -25,7 +26,6 @@ public class WoodEvent implements Listener {
                 block.breakNaturally();
                 block = block.getRelative(0, 1, 0);
             }
-
         }
 
     }

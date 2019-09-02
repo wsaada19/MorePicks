@@ -19,7 +19,7 @@ public class ReloadCommand extends SubCommand {
     }
 
     public String info() {
-        return "The command" + ChatColor.YELLOW + " /mp [reload} will reload the configuration file";
+        return "The command" + ChatColor.YELLOW + " /at [reload} will reload the configuration file";
     }
 
     public String[] aliases() {
