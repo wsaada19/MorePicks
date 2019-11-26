@@ -37,8 +37,7 @@ public class GiveCommand extends SubCommand {
 
                 playerToSend.getInventory().addItem(PickAxeInformation.getPick(i).getPick());
             }
-            playerToSend.sendMessage(ChatColor.GREEN + "You have been awarded with a " +
-                    displayName + " all of our awesome tools!");
+            playerToSend.sendMessage(ChatColor.GREEN + "You have been awarded with all of our awesome tools!");
             return;
         }
 

@@ -1,10 +1,7 @@
 package me.williamsaada.MorePicks;
 
 import me.williamsaada.MorePicks.commands.PickCommands;
-import me.williamsaada.MorePicks.events.LaserEvent;
-import me.williamsaada.MorePicks.events.MiningEvent;
-import me.williamsaada.MorePicks.events.TreasureFindEvent;
-import me.williamsaada.MorePicks.events.WoodEvent;
+import me.williamsaada.MorePicks.events.*;
 import me.williamsaada.MorePicks.treasurefind.LootItem;
 import me.williamsaada.MorePicks.treasurefind.LootTable;
 import org.bukkit.Material;
@@ -25,6 +22,8 @@ public class AwesomeTools extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MiningEvent(), this);
         getServer().getPluginManager().registerEvents(new WoodEvent(), this);
         getServer().getPluginManager().registerEvents(new LaserEvent(), this);
+        //getServer().getPluginManager().registerEvents(new ClickShopEvent(), this);
+        //getServer().getPluginManager().registerEvents(new ShopGUI(), this);
         commands = new PickCommands();
         commands.setup();
         loadConfig();
@@ -60,6 +59,8 @@ public class AwesomeTools extends JavaPlugin {
                 material = Material.DIAMOND_PICKAXE;
             } else if(itemKeys[i].contains("dirt")) {
                 material = Material.DIAMOND_SHOVEL;
+            } else if(itemKeys[i].contains("Fishing")) {
+                material = Material.FISHING_ROD;
             } else {
                 material = Material.DIAMOND_AXE;
             }
@@ -75,7 +76,8 @@ public class AwesomeTools extends JavaPlugin {
             loreList.add(itemLore);
             boolean enabled = sel.getBoolean("enabled");
             boolean unbreakable = sel.getBoolean("unbreakable");
-            PickAxeInformation.listOfPicks.add(new PickAxeInformation(name, loreList, unbreakable, enabled, mat));
+            int cost = sel.getInt("cost");
+            PickAxeInformation.listOfPicks.add(new PickAxeInformation(name, loreList, unbreakable, enabled, mat, cost));
         } catch(Exception e){
             e.printStackTrace();
         }

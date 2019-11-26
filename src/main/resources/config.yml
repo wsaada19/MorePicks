@@ -1,67 +1,4 @@
-# Name, itemLore (description), unbreakable field all can be configured
-# Set enabled to false if you would like to disable a tool in your server
-tools:
-  laserPickaxe:
-    name: Laser Pickaxe
-    itemLore: Mine from miles away!
-    unbreakable: true
-    enabled: true
-  expPickaxe:
-    name: Experience Pickaxe
-    itemLore: Get that exp!!
-    unbreakable: true
-    enabled: true
-  smeltingPickaxe:
-    name: Smelting Pickaxe
-    itemLore: Who needs a furnace?
-    unbreakable: true
-    enabled: true
-  magneticPickaxe:
-    name: Magnetic Pickaxe
-    itemLore: Don't bother picking anything up!
-    unbreakable: true
-    enabled: true
-  bountifulPickaxe:
-    name: Bountiful Pickaxe
-    itemLore: Free Stuff!
-    unbreakable: true
-    enabled: true
-  explosivePickaxe:
-    name: Explosive Pickaxe
-    itemLore: BOOM!
-    unbreakable: true
-    enabled: true
-  megaAxe:
-    name: Mega Axe
-    itemLore: Only takes one wack!
-    unbreakable: true
-    enabled: true
-  piercingPickaxe:
-    name: Piercing Pickaxe
-    itemLore: Possibility to destroy extra blocks!
-    unbreakable: true
-    enabled: true
-  dirtDestroyer:
-    name: Dirt Destroyer
-    itemLore: Breaks a lot of dirt!
-    unbreakable: true
-    enabled: true
-  treasurePickaxe:
-    name: Treasure Pickaxe
-    itemLore: Find treasure!
-    unbreakable: true
-    enabled: true
-  treasureAxe:
-    name: Treasure Axe
-    itemLore: Find Treasure
-    unbreakable: true
-    enabled: true
-  treasureFishingRod:
-    name: Treasure Fishing Rod
-    itemLore: Catch a fish and you might get some tresure!
-    unbreakable: true
-    enabled: true
-
+#                         Loot Table Configurations
 # Drop chance refers to the chance of drop occurring from a loot tool
 # Example: .05 means each time you use your Looting Pick, there is a 5% of getting a drop from the table
 dropChance: .50
@@ -78,4 +15,81 @@ drops:
     weight: 90
     min: 1
     max: 10
+
+#                           Tool Information Configuration
+# Name, itemLore (description), unbreakable field all can be configured
+# Set enabled to false if you would like to disable a tool in your server
+tools:
+  laserPickaxe:
+    name: Laser Pickaxe
+    itemLore: Mine from miles away!
+    unbreakable: false
+    enabled: true
+    cost: 100
+  expPickaxe:
+    name: Experience Pickaxe
+    itemLore: Get that exp!!
+    unbreakable: false
+    enabled: true
+    cost: 200
+  smeltingPickaxe:
+    name: Smelting Pickaxe
+    itemLore: Who needs a furnace?
+    unbreakable: true
+    enabled: true
+    cost: 600
+  magneticPickaxe:
+    name: Magnetic Pickaxe
+    itemLore: Don't bother picking anything up!
+    unbreakable: true
+    enabled: true
+    cost: 900
+  bountifulPickaxe:
+    name: Bountiful Pickaxe
+    itemLore: Free Stuff!
+    unbreakable: true
+    enabled: true
+    cost: 1000
+  explosivePickaxe:
+    name: Explosive Pickaxe
+    itemLore: BOOM!
+    unbreakable: false
+    enabled: true
+    cost: 1234
+  megaAxe:
+    name: Mega Axe
+    itemLore: Only takes one wack!
+    unbreakable: false
+    enabled: true
+  piercingPickaxe:
+    name: Piercing Pickaxe
+    itemLore: Possibility to destroy extra blocks!
+    unbreakable: false
+    enabled: true
+    cost: 220
+  dirtDestroyer:
+    name: Dirt Destroyer
+    itemLore: Breaks a lot of dirt!
+    unbreakable: false
+    enabled: true
+    cost: 1098
+  treasurePickaxe:
+    name: Treasure Pickaxe
+    itemLore: Find treasure!
+    unbreakable: true
+    enabled: true
+    cost: 1009
+  treasureAxe:
+    name: Treasure Axe
+    itemLore: Find Treasure
+    unbreakable: false
+    enabled: true
+    cost: 1230
+  treasureFishingRod:
+    name: Treasure Fishing Rod
+    itemLore: Catch a fish and you might get some tresure!
+    unbreakable: false
+    enabled: true
+    cost: 1234
+
 

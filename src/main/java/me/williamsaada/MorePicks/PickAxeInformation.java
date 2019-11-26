@@ -16,14 +16,28 @@ public class PickAxeInformation {
     private boolean unbreakable;
     private boolean enabled;
     private Material material;
+    private int cost;
 
-    public PickAxeInformation(String name, ArrayList<String> itemLore, boolean ub, boolean eb, Material mat){
+    public PickAxeInformation(String name, ArrayList<String> itemLore, boolean ub, boolean eb, Material mat,
+                              int cost){
         this.name = name;
         this.itemLore = itemLore;
         itemLore.add("");
         unbreakable = ub;
         enabled = eb;
         material = mat;
+        this.cost = cost;
+    }
+
+    public static boolean IsThisAMorePicksTool(String itemName){
+        for(PickAxeInformation pick : listOfPicks)
+        {
+            if(itemName.equalsIgnoreCase((pick.getName())))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static PickAxeInformation getPick(int i){

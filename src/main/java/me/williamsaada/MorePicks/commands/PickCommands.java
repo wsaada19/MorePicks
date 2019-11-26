@@ -23,6 +23,7 @@ public class PickCommands implements CommandExecutor {
         subCommands = new HashMap<String, SubCommand>();
         subCommands.put("give", new GiveCommand());
         subCommands.put("reload", new ReloadCommand());
+        subCommands.put("store", new StoreCommand());
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -30,7 +31,7 @@ public class PickCommands implements CommandExecutor {
         if(!(sender instanceof Player)){return false;}
         Player player = (Player)sender;
         if(args.length < 1){
-            player.sendMessage("Please enter another command /" + main + " [give, reload, help]");
+            player.sendMessage("Please enter another command /" + main + " [give, store, help]");
             return false;
         }
         String sub = args[0];

@@ -1,5 +1,6 @@
 package me.williamsaada.MorePicks.events;
 
+import me.williamsaada.MorePicks.AwesomeTools;
 import me.williamsaada.MorePicks.MorePicksUtility;
 import me.williamsaada.MorePicks.PickAxeInformation;
 import org.bukkit.Bukkit;
@@ -9,8 +10,11 @@ import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.FixedMetadataValue;
+import org.bukkit.metadata.MetadataValue;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,19 +30,33 @@ public class MiningEvent implements Listener {
     private static final int EXPLOSIVE_PICKAXE = 5;
     private static final int PIERCING_PICKAXE = 7;
     private static final int DIRT_DESTROYER = 8;
+    private static final String BLOCK_KEY = "IS_PLACED";
 
     private ArrayList<PickAxeInformation> allTools = PickAxeInformation.getListOfPicks();
 
     @EventHandler
+    public void onBlockPlaceEvent(BlockPlaceEvent e)
+    {
+        if(MorePicksUtility.isMaterialOre(e.getBlockPlaced().toString())){
+            MetadataValue meta = new FixedMetadataValue(AwesomeTools.getInstance(), true);
+            e.getBlock().setMetadata(BLOCK_KEY, meta);
+        }
+    }
+
+    @EventHandler
     public void onBlockBreakEvent(BlockBreakEvent e){
+
+        ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
+        String itemName = item.getItemMeta().getDisplayName();
+
+        if(e.getBlock().hasMetadata(BLOCK_KEY)){return;}
+
+        if(!PickAxeInformation.IsThisAMorePicksTool(itemName)){return;}
 
         // Check permission to use a custom tool
         if(!e.getPlayer().hasPermission("morepicks.use")){
             e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use this tool");
         }
-
-        ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
-        String itemName = item.getItemMeta().getDisplayName();
 
         // Runs when player uses a smelting pickaxe
         if(itemName.equals(allTools.get(SMELTING_PICKAXE).getName()) &&
