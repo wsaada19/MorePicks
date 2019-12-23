@@ -16,7 +16,7 @@ public class MorePicksUtility {
     private static final Material[] oreRank = {Material.DIAMOND_ORE, Material.GOLD_ORE, Material.EMERALD, Material.IRON_ORE,
                                 Material.REDSTONE_ORE, Material.NETHER_QUARTZ_ORE, Material.COAL, Material.LAPIS_ORE};
 
-    private final String[] itemCodesThatNeedManualDurability = {"laserPickaxe", "explosivePickaxe", "megaAxe"};
+    private static final String[] itemCodesThatNeedManualDurability = {"laserPickaxe", "explosivePickaxe", "megaAxe"};
 
     public static void initialize(){
         // Creates a hashmap of Ores/Materials and the material they are smelted into
@@ -62,17 +62,6 @@ public class MorePicksUtility {
         }
         Bukkit.getLogger().info("ERROR: neither material is an ore, " + mat1.toString() + " or " + mat2.toString());
         return Material.BOWL;
-    }
-
-    public static boolean shouldExperienceBeRemoved(String pickName){
-        for(String code : itemCodes){
-            if(code.equalsIgnoreCase(pickName)){
-                return true;
-            }
-        }
-
-        return false;
-
     }
 
     public static String getCardinalDirection(Player player) {

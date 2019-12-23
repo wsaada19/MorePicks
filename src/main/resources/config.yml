@@ -1,11 +1,11 @@
 #                         Loot Table Configurations
 # Drop chance refers to the chance of drop occurring from a loot tool
-# Example: .05 means each time you use your Looting Pick, there is a 5% of getting a drop from the table
-dropChance: .50
+# Example: .05 means each time you use your Looting Tool, there is a 5% of getting a drop from the table
+dropChance: .05
 
 # Drops occur based on the above chance. To add items use the format below, make sure to add items from
 # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html for this to work
-# The higher the weight is the more likely an item is to drop
+# The higher the weight is the more likely an item is to drop relative to the other items in the table
 drops:
   - material: DIAMOND
     weight: 10
@@ -15,81 +15,96 @@ drops:
     weight: 90
     min: 1
     max: 10
-
 #                           Tool Information Configuration
+toolShop: true # If set to true the tool shop feature is turned on
+
 # Name, itemLore (description), unbreakable field all can be configured
 # Set enabled to false if you would like to disable a tool in your server
+# The material(tool type) can be configured. If a tool is not the correct type then it will not work.
+
+
 tools:
   laserPickaxe:
     name: Laser Pickaxe
     itemLore: Mine from miles away!
     unbreakable: false
     enabled: true
+    material: DIAMOND_PICKAXE
     cost: 100
   expPickaxe:
     name: Experience Pickaxe
     itemLore: Get that exp!!
     unbreakable: false
     enabled: true
-    cost: 200
+    material: DIAMOND_PICKAXE
+    cost: 130
   smeltingPickaxe:
     name: Smelting Pickaxe
     itemLore: Who needs a furnace?
-    unbreakable: true
+    unbreakable: false
     enabled: true
-    cost: 600
+    material: DIAMOND_PICKAXE
+    cost: 145
   magneticPickaxe:
     name: Magnetic Pickaxe
     itemLore: Don't bother picking anything up!
-    unbreakable: true
+    unbreakable: false
     enabled: true
-    cost: 900
+    material: DIAMOND_PICKAXE
+    cost: 100
   bountifulPickaxe:
     name: Bountiful Pickaxe
     itemLore: Free Stuff!
-    unbreakable: true
+    unbreakable: false
     enabled: true
-    cost: 1000
+    material: DIAMOND_PICKAXE
+    cost: 100
   explosivePickaxe:
     name: Explosive Pickaxe
     itemLore: BOOM!
     unbreakable: false
     enabled: true
-    cost: 1234
+    material: DIAMOND_PICKAXE
+    cost: 100
   megaAxe:
     name: Mega Axe
     itemLore: Only takes one wack!
     unbreakable: false
     enabled: true
+    material: DIAMOND_AXE
+    cost: 100
   piercingPickaxe:
     name: Piercing Pickaxe
     itemLore: Possibility to destroy extra blocks!
     unbreakable: false
     enabled: true
-    cost: 220
+    material: DIAMOND_PICKAXE
+    cost: 100
   dirtDestroyer:
     name: Dirt Destroyer
     itemLore: Breaks a lot of dirt!
     unbreakable: false
     enabled: true
-    cost: 1098
+    material: DIAMOND_SHOVEL
+    cost: 100
   treasurePickaxe:
     name: Treasure Pickaxe
     itemLore: Find treasure!
-    unbreakable: true
+    unbreakable: false
     enabled: true
-    cost: 1009
+    material: GOLDEN_PICKAXE
+    cost: 100
   treasureAxe:
     name: Treasure Axe
     itemLore: Find Treasure
     unbreakable: false
     enabled: true
-    cost: 1230
+    material: GOLDEN_AXE
+    cost: 100
   treasureFishingRod:
     name: Treasure Fishing Rod
     itemLore: Catch a fish and you might get some tresure!
     unbreakable: false
     enabled: true
-    cost: 1234
-
-
+    material: FISHING_ROD
+    cost: 100

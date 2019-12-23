@@ -27,7 +27,7 @@ public class LootTable {
     {
         Random random = new Random();
         double rand = random.nextDouble();
-        return (rand >= dropChance);
+        return (rand <= dropChance);
     }
     public ItemStack pullFromLootTable(){
 

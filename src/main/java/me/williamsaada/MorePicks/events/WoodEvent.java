@@ -1,6 +1,8 @@
 package me.williamsaada.MorePicks.events;
 
 import me.williamsaada.MorePicks.PickAxeInformation;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,9 +18,16 @@ public class WoodEvent implements Listener {
 
         Block b = e.getBlock();
         ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
+        if(item.getType() == Material.AIR){return;}
+
         if(b.getType().toString().contains("LOG") &&
                 item.getItemMeta().getDisplayName().equalsIgnoreCase(PickAxeInformation.getPick(MEGA_AXE).getName()) &&
                 PickAxeInformation.getPick(MEGA_AXE).getEnabled()){
+
+            if(!e.getPlayer().hasPermission("awesometools.use")){
+                e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use this tool");
+                return;
+            }
 
             Block block = b.getRelative(0, 1, 0);
 
@@ -30,8 +39,5 @@ public class WoodEvent implements Listener {
 
     }
 
-    private void recursiveBreakBlock(Block block){
-
-    }
 
 }

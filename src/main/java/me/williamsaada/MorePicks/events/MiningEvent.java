@@ -3,7 +3,6 @@ package me.williamsaada.MorePicks.events;
 import me.williamsaada.MorePicks.AwesomeTools;
 import me.williamsaada.MorePicks.MorePicksUtility;
 import me.williamsaada.MorePicks.PickAxeInformation;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -13,6 +12,8 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
 
@@ -37,16 +38,16 @@ public class MiningEvent implements Listener {
     @EventHandler
     public void onBlockPlaceEvent(BlockPlaceEvent e)
     {
-        if(MorePicksUtility.isMaterialOre(e.getBlockPlaced().toString())){
-            MetadataValue meta = new FixedMetadataValue(AwesomeTools.getInstance(), true);
-            e.getBlock().setMetadata(BLOCK_KEY, meta);
-        }
+        MetadataValue meta = new FixedMetadataValue(AwesomeTools.getInstance(), true);
+        e.getBlock().setMetadata(BLOCK_KEY, meta);
     }
 
     @EventHandler
     public void onBlockBreakEvent(BlockBreakEvent e){
 
         ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
+        if(item.getType() == Material.AIR){return;}
+
         String itemName = item.getItemMeta().getDisplayName();
 
         if(e.getBlock().hasMetadata(BLOCK_KEY)){return;}
@@ -54,8 +55,9 @@ public class MiningEvent implements Listener {
         if(!PickAxeInformation.IsThisAMorePicksTool(itemName)){return;}
 
         // Check permission to use a custom tool
-        if(!e.getPlayer().hasPermission("morepicks.use")){
+        if(!e.getPlayer().hasPermission("awesometools.use")){
             e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use this tool");
+            return;
         }
 
         // Runs when player uses a smelting pickaxe
@@ -89,8 +91,7 @@ public class MiningEvent implements Listener {
          */
         if(itemName.equals(allTools.get(BOUNTIFUL_PICKAXE).getName()) &&
                 allTools.get(BOUNTIFUL_PICKAXE).getEnabled()){
-
-            if(b.getType().toString().contains("ORE")){return;}
+            if(b.hasMetadata(BLOCK_KEY)){return;}
             Material highestRank = null;
             Collection<ItemStack> drops = null;
 
@@ -132,6 +133,7 @@ public class MiningEvent implements Listener {
                         }
                     }
                 }
+            addDurability(e.getPlayer().getInventory().getItemInMainHand());
         }
         /*
             Piercing Pickaxe
@@ -171,7 +173,7 @@ public class MiningEvent implements Listener {
         Block currentBlock = e.getBlock();
         String dir = MorePicksUtility.getCardinalDirection(e.getPlayer());
 
-        while(num < .5){
+        while(num < .6){
            currentBlock = getRelativeBlock(dir, currentBlock);
             currentBlock.breakNaturally();
             num = random.nextDouble();
@@ -196,6 +198,8 @@ public class MiningEvent implements Listener {
             currentBlock = getRelativeBlock(direction, currentBlock);
 
         }
+
+        addDurability(e.getPlayer().getInventory().getItemInMainHand());
     }
 
     private static Block getRelativeBlock(String direction, Block block){
@@ -208,5 +212,12 @@ public class MiningEvent implements Listener {
         } else {
             return block.getRelative(0, 0, 1);
         }
+    }
+
+    private void addDurability(ItemStack item)
+    {
+        Damageable damageable = (Damageable) item.getItemMeta();
+        damageable.setDamage(damageable.getDamage() + 1);
+        item.setItemMeta((ItemMeta) damageable);
     }
 }

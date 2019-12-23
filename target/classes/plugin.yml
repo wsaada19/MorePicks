@@ -10,10 +10,20 @@ commands:
     description: Commands for MorePicks plugin
 
 permissions:
-  awesometools.give:
-    description: The ability to give any player a custom MorePicks tool.
-    default: op
+  awesometools.*:
+    description: Gives access to all awesome tools commands
     children:
-      awesometools.use:
-        description: The ability to use a custom MorePicks tool.
-        default: true
+      awesometools.give: true
+      awesometools.use: true
+  awesometools.give:
+    description: The ability to give any player a custom tool.
+    default: op
+  awesometools.use:
+    description: The ability to use a custom tool.
+    default: true
+  awesometools.shop.use:
+    description: The permission to open and use an awesome tools shop
+    default: true
+  awesometools.shop.create:
+    description: The ability to create an awesome tools npc shop
+    default: op

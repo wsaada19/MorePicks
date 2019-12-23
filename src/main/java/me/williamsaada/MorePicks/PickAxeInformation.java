@@ -1,5 +1,6 @@
 package me.williamsaada.MorePicks;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -18,8 +19,8 @@ public class PickAxeInformation {
     private Material material;
     private int cost;
 
-    public PickAxeInformation(String name, ArrayList<String> itemLore, boolean ub, boolean eb, Material mat,
-                              int cost){
+    public PickAxeInformation(String name, ArrayList<String> itemLore, boolean ub, boolean eb,
+                              Material mat, int cost){
         this.name = name;
         this.itemLore = itemLore;
         itemLore.add("");
@@ -61,16 +62,20 @@ public class PickAxeInformation {
     }
 
     public ItemStack getPick(){
-
         ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(name);
+        meta.setDisplayName(ChatColor.YELLOW + name);
         meta.setLore(itemLore);
         meta.setUnbreakable(unbreakable);
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         item.setItemMeta(meta);
         return item;
+    }
 
+    public int getCost(){return cost;}
+    public String getCostString()
+    {
+        return ChatColor.GREEN + "Cost" + ChatColor.WHITE + ": " + ChatColor.YELLOW + cost;
     }
 
 

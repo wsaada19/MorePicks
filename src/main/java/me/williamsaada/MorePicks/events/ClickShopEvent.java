@@ -18,9 +18,9 @@ public class ClickShopEvent implements Listener {
 
             if(villager.getName().equals("Awesome Tools Shop")){
                 event.setCancelled(true);
-                ShopGUI shopGUI = new ShopGUI();
-                shopGUI.initializeItems();
-                shopGUI.openInventory(event.getPlayer());
+//                ShopGUI shopGUI = new ShopGUI();
+//                shopGUI.initializeItems();
+//                shopGUI.openInventory(event.getPlayer());
             }
         }
 
