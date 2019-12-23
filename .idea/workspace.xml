@@ -7,25 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a783ff-ce89-4520-a15a-5427ecba405e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/ShopCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/AwesomeTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/AwesomeTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/MorePicksUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/MorePicksUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/PickAxeInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/PickAxeInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/ShopGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/ShopGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/GiveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/GiveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/PickCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/PickCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/ClickShopEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/ClickShopEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/LaserEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/LaserEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/MiningEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/MiningEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/TreasureFindEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/TreasureFindEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/WoodEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/WoodEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/treasurefind/LootTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/treasurefind/LootTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,9 +21,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/StoreCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/treasurefind/LootItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="643">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -61,14 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/ShopGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -86,26 +78,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/HelpCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#915#916#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/GiveCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="34">
+              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/PickAxeInformation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+            <state relative-caret-position="-9">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -223,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/treasurefind/LootTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/WoodEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/MiningEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/GiveCommand.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/ShopCommand.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
@@ -234,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/PickAxeInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/AwesomeTools.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/events/LaserEvent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/GiveCommand.java" />
       </list>
     </option>
   </component>
@@ -254,8 +230,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="92" />
-    <option name="y" value="116" />
+    <option name="x" value="-22" />
+    <option name="y" value="70" />
     <option name="width" value="2766" />
     <option name="height" value="1664" />
   </component>
@@ -339,6 +315,17 @@
               <item name="williamsaada" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="MorePicks" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="events" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="MorePicks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="MagicArena" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="me" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="williamsaada" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="MorePicks" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="treasurefind" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -434,15 +421,15 @@
       <workItem from="1576629790713" duration="12382000" />
       <workItem from="1576712102513" duration="650000" />
       <workItem from="1577031127323" duration="1199000" />
-      <workItem from="1577051919576" duration="1284000" />
+      <workItem from="1577051919576" duration="2190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189841000" />
+    <option name="totallyTimeSpent" value="190747000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="58" width="1383" height="832" extended-state="0" />
+    <frame x="-11" y="35" width="1383" height="832" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32603773" />
@@ -623,26 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/StoreCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/treasurefind/LootItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/HelpCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -657,30 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/GiveCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/AwesomeTools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/PickAxeInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -726,8 +673,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/ShopGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/PickAxeInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/GiveCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/commands/StoreCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/williamsaada/MorePicks/treasurefind/LootItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

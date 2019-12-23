@@ -23,7 +23,7 @@ public class GiveCommand extends SubCommand {
         Player playerToSend = Bukkit.getServer().getPlayer(args[1]);
 
         if(playerToSend == null || !playerToSend.isOnline()){
-            player.sendMessage("%CThe player + " + args[1] + " does not exist or is offline");
+            player.sendMessage("§cThe player + " + args[1] + " does not exist or is offline");
         }
 
         String itemName = args[2];
