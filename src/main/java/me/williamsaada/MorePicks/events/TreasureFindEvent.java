@@ -3,6 +3,7 @@ package me.williamsaada.MorePicks.events;
 import me.williamsaada.MorePicks.PickAxeInformation;
 import me.williamsaada.MorePicks.treasurefind.LootTable;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,27 +24,47 @@ public class TreasureFindEvent implements Listener {
 
     @EventHandler
     public void onUseTreasureTool(BlockBreakEvent event){
-        // Check permission to use a custom tool
-        if(!event.getPlayer().hasPermission("morepicks.use")){
-            event.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use this tool");
-        }
 
         if(!event.getBlock().getType().isSolid()){
             return;
         }
-        if((event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(TREASURE_PICKAXE).getName()) &&
+        ItemStack item = event.getPlayer().getInventory().getItemInMainHand();
+        if(item.getType() == Material.AIR){return;}
+
+        if(!PickAxeInformation.IsThisAMorePicksTool(item.getItemMeta().getDisplayName()))
+        {
+            return;
+        }
+
+        if((item.getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(TREASURE_PICKAXE).getName()) &&
         PickAxeInformation.getPick(TREASURE_PICKAXE).getEnabled()) ||
-                (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(TREASURE_AXE).getName()) &&
+                (item.getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(TREASURE_AXE).getName()) &&
                         PickAxeInformation.getPick(TREASURE_AXE).getEnabled()))
         {
+
+            // Check permission to use a custom tool
+            if(!event.getPlayer().hasPermission("awesometools.use")){
+                event.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use this tool");
+                return;
+            }
+
             callLootTable(event.getPlayer());
         }
     }
     @EventHandler
     public void onCatchFish(PlayerFishEvent event){
+
+        ItemStack item = event.getPlayer().getInventory().getItemInMainHand();
+
         if(event.getState() == PlayerFishEvent.State.CAUGHT_FISH &&
-        event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(TREASURE_FISHINGROD).getName()) &&
+        item.getItemMeta().getDisplayName().equals(PickAxeInformation.getPick(TREASURE_FISHINGROD).getName()) &&
         PickAxeInformation.getPick(TREASURE_FISHINGROD).getEnabled()){
+
+            if(!event.getPlayer().hasPermission("awesometools.use")){
+                event.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use this tool");
+                return;
+            }
+
             callLootTable(event.getPlayer());
         }
     }

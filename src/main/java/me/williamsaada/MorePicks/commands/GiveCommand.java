@@ -16,14 +16,14 @@ public class GiveCommand extends SubCommand {
         if(args.length < 3){return;}
 
         if(!player.hasPermission("awesometools.give")){
-            player.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
+            player.sendMessage("§cYou do not have permission to use this command!");
             return;
         }
 
         Player playerToSend = Bukkit.getServer().getPlayer(args[1]);
 
         if(playerToSend == null || !playerToSend.isOnline()){
-            player.sendMessage(ChatColor.RED + "The player + " + args[1] + " does not exist or is offline");
+            player.sendMessage("%CThe player + " + args[1] + " does not exist or is offline");
         }
 
         String itemName = args[2];
@@ -37,8 +37,7 @@ public class GiveCommand extends SubCommand {
 
                 playerToSend.getInventory().addItem(PickAxeInformation.getPick(i).getPick());
             }
-            playerToSend.sendMessage(ChatColor.GREEN + "You have been awarded with a " +
-                    displayName + " all of our awesome tools!");
+            playerToSend.sendMessage(ChatColor.GREEN + "You have been awarded with all of our awesome tools!");
             return;
         }
 

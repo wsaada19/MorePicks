@@ -1,6 +1,7 @@
 package me.williamsaada.MorePicks.commands;
 
 import me.williamsaada.MorePicks.AwesomeTools;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,6 +24,9 @@ public class PickCommands implements CommandExecutor {
         subCommands = new HashMap<String, SubCommand>();
         subCommands.put("give", new GiveCommand());
         subCommands.put("reload", new ReloadCommand());
+        subCommands.put("help", new HelpCommand());
+        subCommands.put("shop", new ShopCommand());
+        //subCommands.put("store", new StoreCommand());
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -30,7 +34,7 @@ public class PickCommands implements CommandExecutor {
         if(!(sender instanceof Player)){return false;}
         Player player = (Player)sender;
         if(args.length < 1){
-            player.sendMessage("Please enter another command /" + main + " [give, reload, help]");
+            player.sendMessage("&cPlease enter another command /" + main + " [command]");
             return false;
         }
         String sub = args[0];
@@ -43,7 +47,7 @@ public class PickCommands implements CommandExecutor {
             subCommands.get(sub).onCommand(player, args);
             return true;
         } else {
-            player.sendMessage("The subcommand " + sub + " does not exist!");
+            player.sendMessage(ChatColor.RED + "The subcommand " + sub + " does not exist!");
             return false;
         }
     }

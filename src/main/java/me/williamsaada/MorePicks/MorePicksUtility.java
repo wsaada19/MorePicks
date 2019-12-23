@@ -9,12 +9,14 @@ import java.util.HashMap;
 
 public class MorePicksUtility {
 
-    private static HashMap<String, String> smeltingMap = new HashMap<String, String>();
-    private static String[] itemCodes = {"laserPickaxe", "expPickaxe", "smeltingPickaxe", "magneticPickaxe",
+    private static final HashMap<String, String> smeltingMap = new HashMap<String, String>();
+    private static final String[] itemCodes = {"laserPickaxe", "expPickaxe", "smeltingPickaxe", "magneticPickaxe",
             "bountifulPickaxe", "explosivePickaxe", "megaAxe", "piercingPickaxe", "dirtDestroyer", "treasurePickaxe",
             "treasureAxe", "treasureFishingRod"};
-    private static Material[] oreRank = {Material.DIAMOND_ORE, Material.GOLD_ORE, Material.EMERALD, Material.IRON_ORE,
+    private static final Material[] oreRank = {Material.DIAMOND_ORE, Material.GOLD_ORE, Material.EMERALD, Material.IRON_ORE,
                                 Material.REDSTONE_ORE, Material.NETHER_QUARTZ_ORE, Material.COAL, Material.LAPIS_ORE};
+
+    private static final String[] itemCodesThatNeedManualDurability = {"laserPickaxe", "explosivePickaxe", "megaAxe"};
 
     public static void initialize(){
         // Creates a hashmap of Ores/Materials and the material they are smelted into
@@ -29,6 +31,15 @@ public class MorePicksUtility {
     // Returns the smelted material
     public static Material getSmeltingMaterial(String materialName){
         return(Material.getMaterial(smeltingMap.get(materialName)));
+    }
+
+    public static boolean isMaterialOre(String oreName){
+        for(Material ore : oreRank){
+            if(oreName.equalsIgnoreCase(ore.toString())){
+                return true;
+            }
+        }
+        return false;
     }
 
     // Returns true/false based on if a material can be smelted
@@ -61,12 +72,6 @@ public class MorePicksUtility {
         return getDirection(rot);
     }
 
-    /**
-     * Converts a rotation to a cardinal direction name.
-     *
-     * @param rot
-     * @return
-     */
     private static String getDirection(double rot) {
         if (0 <= rot && rot < 45) {
             return "North";
@@ -82,5 +87,6 @@ public class MorePicksUtility {
             return null;
         }
     }
+
 
 }
