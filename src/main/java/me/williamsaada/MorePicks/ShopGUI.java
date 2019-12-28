@@ -48,6 +48,9 @@ public class ShopGUI implements InventoryHolder, Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
+        if(e.getClickedInventory() == null || e.getClickedInventory().getHolder() == null){
+            return;
+        }
         if (!(e.getClickedInventory().getHolder().equals(this))) {
             return;
         }

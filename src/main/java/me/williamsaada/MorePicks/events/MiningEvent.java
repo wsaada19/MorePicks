@@ -3,6 +3,7 @@ package me.williamsaada.MorePicks.events;
 import me.williamsaada.MorePicks.AwesomeTools;
 import me.williamsaada.MorePicks.MorePicksUtility;
 import me.williamsaada.MorePicks.PickAxeInformation;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -53,10 +54,15 @@ public class MiningEvent implements Listener {
         if(e.getBlock().hasMetadata(BLOCK_KEY)){return;}
 
         if(!PickAxeInformation.IsThisAMorePicksTool(itemName)){return;}
-
         // Check permission to use a custom tool
         if(!e.getPlayer().hasPermission("awesometools.use")){
             e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to use this tool");
+            return;
+        }
+
+        BlockBreakEvent fakeEvent = new BlockBreakEvent(e.getBlock(), e.getPlayer());
+        Bukkit.getPluginManager().callEvent(fakeEvent);
+        if (fakeEvent.isCancelled()) {
             return;
         }
 

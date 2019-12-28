@@ -14,7 +14,7 @@ public class MorePicksUtility {
             "bountifulPickaxe", "explosivePickaxe", "megaAxe", "piercingPickaxe", "dirtDestroyer", "treasurePickaxe",
             "treasureAxe", "treasureFishingRod"};
     private static final Material[] oreRank = {Material.DIAMOND_ORE, Material.GOLD_ORE, Material.EMERALD, Material.IRON_ORE,
-                                Material.REDSTONE_ORE, Material.NETHER_QUARTZ_ORE, Material.COAL, Material.LAPIS_ORE};
+                                Material.REDSTONE_ORE, Material.COAL, Material.LAPIS_ORE};
 
     private static final String[] itemCodesThatNeedManualDurability = {"laserPickaxe", "explosivePickaxe", "megaAxe"};
 

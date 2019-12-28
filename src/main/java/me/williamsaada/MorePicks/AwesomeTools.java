@@ -90,11 +90,13 @@ public class AwesomeTools extends JavaPlugin {
             boolean enabled = sel.getBoolean("enabled");
             boolean unbreakable = sel.getBoolean("unbreakable");
             String materialName = sel.getString("material");
-            if(materialName == null){
+            Material material = Material.getMaterial(materialName);
+            if(material == null){
+                getServer().getConsoleSender().sendMessage(materialName + " doesn't exist");
+
                 getServer().getConsoleSender().sendMessage("Disabling Awesome Tools due to an invalid material type configuration");
                 this.onDisable();
             }
-            Material material = Material.getMaterial(materialName);
             int cost = sel.getInt("cost");
 
             PickAxeInformation.listOfPicks.add(new PickAxeInformation(name, loreList, unbreakable, enabled, material, cost));
